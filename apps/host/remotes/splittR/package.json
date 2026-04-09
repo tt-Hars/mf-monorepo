@@ -1,0 +1,13 @@
+{
+  "name": "splittr",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --mode development"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  }
+}

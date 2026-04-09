@@ -1,0 +1,22 @@
+{
+  "name": "host",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
+    "navigo": "^8.11.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1",
+    "html-webpack-plugin": "^5.5.3",
+    "vitest": "^1.0.4",
+    "jsdom": "^23.0.1"
+  }
+}
