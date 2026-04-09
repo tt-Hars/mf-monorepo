@@ -19,13 +19,13 @@ describe('Host Application', () => {
     });
 
     it('should render App A loading state initially', async () => {
-      router.navigate('/app-a');
+      router.navigate('app-a');
       await new Promise(resolve => setTimeout(resolve, 0));
       expect(container.innerHTML).toContain('App A (budgT)');
     });
 
     it('should render App B loading state initially', async () => {
-      router.navigate('/app-b');
+      router.navigate('app-b');
       await new Promise(resolve => setTimeout(resolve, 0));
       expect(container.innerHTML).toContain('splittR (Angular App Placeholder)');
     });

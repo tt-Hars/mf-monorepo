@@ -6,8 +6,8 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     alias: {
-      'budgT/app': path.resolve(__dirname, './remotes/budgT/src/app.js'),
-      'splittR/app': path.resolve(__dirname, './remotes/splittR/src/app.js'),
+      'budgT/app': path.resolve(__dirname, '../remotes/budgT/src/app.js'),
+      'splittR/app': path.resolve(__dirname, '../remotes/splittR/src/app.js'),
     },
   },
 });
