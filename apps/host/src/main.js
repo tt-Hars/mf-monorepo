@@ -6,8 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (container) {
     setupRoutes(container);
+    router.updatePageLinks();
+    router.resolve();
   }
-
-  // Update links properly using Navigo's built-in binding method
-  router.updatePageLinks();
 });

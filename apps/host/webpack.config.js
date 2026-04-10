@@ -21,7 +21,7 @@ module.exports = {
         splittR: 'splittR@http://localhost:3002/remoteEntry.js',
       },
       shared: {
-        '@reduxjs/toolkit': { singleton: true },
+        '@reduxjs/toolkit': { singleton: true, eager: true },
       },
     }),
     new HtmlWebpackPlugin({
