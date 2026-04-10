@@ -1,0 +1,13 @@
+{
+  "name": "polyglot-mfe-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "pnpm -r run start",
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test"
+  },
+  "devDependencies": {
+    "nx": "latest"
+  }
+}

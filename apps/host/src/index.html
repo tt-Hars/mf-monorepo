@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Polyglot MFE Host</title>
+  <style>
+    body { font-family: sans-serif; margin: 0; padding: 0; }
+    header { background: #333; color: #fff; padding: 1rem; }
+    nav a { color: #fff; margin-right: 1rem; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    main { padding: 2rem; }
+    #micro-frontend-container { border: 2px dashed #ccc; padding: 1rem; min-height: 200px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mega Menu (Host App)</h1>
+    <nav>
+      <a href="/" data-navigo>Home</a>
+      <a href="/app-a" data-navigo>App A (budgT)</a>
+      <a href="/app-b" data-navigo>App B (splittR)</a>
+    </nav>
+  </header>
+  <main>
+    <div id="micro-frontend-container">
+      <!-- Remote apps will be mounted here -->
+    </div>
+  </main>
+</body>
+</html>
