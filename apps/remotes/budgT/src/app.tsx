@@ -10,7 +10,7 @@ const App = () => {
   );
 };
 
-export const mount = (el) => {
+export const mount = (el: any) => {
   // Reuse existing root if available, otherwise create a new one
   if (!el.__reactRoot) {
     el.__reactRoot = createRoot(el);
@@ -18,7 +18,7 @@ export const mount = (el) => {
   el.__reactRoot.render(<App />);
 };
 
-export const unmount = (el) => {
+export const unmount = (el: any) => {
   if (el.__reactRoot) {
     el.__reactRoot.unmount();
     el.__reactRoot = null;
