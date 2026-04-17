@@ -28,3 +28,9 @@
 - Created `apps/host/remotes/splittR/package.json`.
 - Created `apps/host/remotes/splittR/webpack.config.js` exposing `./app` via Module Federation.
 - Created `apps/host/remotes/splittR/src/app.js` with a minimal mount placeholder simulating Angular bootstrap.
+
+## Convert to TS
+- Created root `tsconfig.base.json`.
+- Converted `apps/host` to TypeScript using `ts-loader` and `@types` modules, updated tests.
+- Converted `apps/remotes/budgT` (React app) to `ts/tsx` with `@babel/preset-typescript`.
+- Converted `apps/remotes/splittR` placeholder to a native Angular app, properly integrated with Module Federation and TypeScript.
