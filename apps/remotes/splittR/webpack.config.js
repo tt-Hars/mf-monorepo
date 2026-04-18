@@ -1,26 +1,16 @@
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
-const path = require('path');
+const { shareAll, withModuleFederationPlugin } = require('@angular-architects/module-federation/webpack');
 
-module.exports = {
-  entry: './src/index.js',
-  mode: 'development',
-  devServer: {
-    port: 3002,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
+module.exports = withModuleFederationPlugin({
+
+  name: 'splittR',
+
+  exposes: {
+    './app': './src/app.ts',
+    './Component': './src/app/app.component.ts',
   },
-  output: {
-    publicPath: 'auto',
-    path: path.resolve(__dirname, 'dist'),
+
+  shared: {
+    ...shareAll({ singleton: true, strictVersion: true, requiredVersion: 'auto' }),
   },
-  plugins: [
-    new ModuleFederationPlugin({
-      name: 'splittR',
-      filename: 'remoteEntry.js',
-      exposes: {
-        './app': './src/app',
-      },
-    }),
-  ],
-};
+
+});

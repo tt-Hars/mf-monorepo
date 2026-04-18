@@ -12,11 +12,16 @@
     "navigo": "^8.11.1"
   },
   "devDependencies": {
+    "@types/jsdom": "^28.0.1",
+    "@types/navigo": "^8.1.2",
+    "@types/node": "^25.6.0",
+    "html-webpack-plugin": "^5.5.3",
+    "jsdom": "^23.0.1",
+    "ts-loader": "^9.5.7",
+    "typescript": "^5.4.5",
+    "vitest": "^1.0.4",
     "webpack": "^5.89.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1",
-    "html-webpack-plugin": "^5.5.3",
-    "vitest": "^1.0.4",
-    "jsdom": "^23.0.1"
+    "webpack-dev-server": "^4.15.1"
   }
 }
