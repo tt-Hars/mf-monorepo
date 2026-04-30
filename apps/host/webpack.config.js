@@ -22,7 +22,7 @@ module.exports = {
     historyApiFallback: true,
   },
   output: {
-    publicPath: 'auto',
+    publicPath: '/',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [

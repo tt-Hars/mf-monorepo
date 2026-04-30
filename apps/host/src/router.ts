@@ -28,7 +28,13 @@ export function setupRoutes(container: AppContainer) {
       try {
         const app = await import('budgT/app');
         container.__currentApp = app;
-        app.mount(container);
+        if (app.mount) {
+          app.mount(container);
+        } else if (app.default && app.default.mount) {
+          app.default.mount(container);
+        } else {
+          throw new Error('mount is not a function');
+        }
       } catch (err: any) {
         container.innerHTML = `<p style="color:red">Error loading App A: ${err.message}</p>`;
       }
@@ -43,7 +49,13 @@ export function setupRoutes(container: AppContainer) {
       try {
         const app = await import('splittR/app');
         container.__currentApp = app;
-        app.mount(container);
+        if (app.mount) {
+          app.mount(container);
+        } else if (app.default && app.default.mount) {
+          app.default.mount(container);
+        } else {
+          throw new Error('mount is not a function');
+        }
       } catch (err: any) {
         container.innerHTML = `<p style="color:red">Error loading App B: ${err.message}</p>`;
       }
