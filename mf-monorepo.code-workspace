@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "mf-monorepo",
+			"path": "."
+		},
+		{
+			"path": "../budgT"
+		},
+		{
+			"path": "../splitTheBills"
+		}
+	],
+	"settings": {
+		"postman.settings.dotenv-detection-notification-visibility": false
+	}
+}

@@ -2,7 +2,13 @@ import Navigo from 'navigo';
 
 export const router = new Navigo('/', { hash: false });
 
-export function setupRoutes(container) {
+export interface AppContainer extends HTMLElement {
+  __currentApp?: {
+    unmount?: (el: HTMLElement) => void;
+  } | null;
+}
+
+export function setupRoutes(container: AppContainer) {
   router
     .on('/', () => {
       // Clean up any mounted remote apps
@@ -22,8 +28,14 @@ export function setupRoutes(container) {
       try {
         const app = await import('budgT/app');
         container.__currentApp = app;
-        app.mount(container);
-      } catch (err) {
+        if (app.mount) {
+          app.mount(container);
+        } else if (app.default && app.default.mount) {
+          app.default.mount(container);
+        } else {
+          throw new Error('mount is not a function');
+        }
+      } catch (err: any) {
         container.innerHTML = `<p style="color:red">Error loading App A: ${err.message}</p>`;
       }
     })
@@ -37,8 +49,14 @@ export function setupRoutes(container) {
       try {
         const app = await import('splittR/app');
         container.__currentApp = app;
-        app.mount(container);
-      } catch (err) {
+        if (app.mount) {
+          app.mount(container);
+        } else if (app.default && app.default.mount) {
+          app.default.mount(container);
+        } else {
+          throw new Error('mount is not a function');
+        }
+      } catch (err: any) {
         container.innerHTML = `<p style="color:red">Error loading App B: ${err.message}</p>`;
       }
     })
